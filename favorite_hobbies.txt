@@ -2,5 +2,6 @@ board games
 hockey
 geometry dash
 running
-juggling
+jugglingD
 berry picking
+projects
