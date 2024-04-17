@@ -46,3 +46,5 @@ def create_tables():
     
   cur.execute( sql_city_pop )
   cur.execute( sql_state_pop )
+
+  conn.commit()
