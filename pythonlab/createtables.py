@@ -27,20 +27,22 @@ def create_tables():
   
   cur = conn.cursor()
   
-  sql_city_pop = "DROP TABLE IF EXISTS cityPop;
-CREATE TABLE cityPop (
-  city char(40),
-  state char(20),
-  population int,
-  latitude real,
-  longitude real
-);"
-  sql_state_pop = "DROP TABLE IF EXISTS statePop;
-CREATE TABLE statePop (
-  code char(3),
-  state char(20),
-  population int
-);"
+
+sql_city_pop = """DROP TABLE IF EXISTS cityPop;
+  CREATE TABLE cityPop (
+    city char(40),
+    state char(20),
+    population int,
+    latitude real,
+    longitude real
+  );"""
+
+sql_state_pop = """DROP TABLE IF EXISTS statePop;
+  CREATE TABLE statePop (
+    code char(3),
+    state char(20),
+    population int
+  );"""
     
   cur.execute( sql_city_pop )
   cur.execute( sql_state_pop )
