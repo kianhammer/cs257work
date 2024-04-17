@@ -48,3 +48,5 @@ def create_tables():
   cur.execute( sql_state_pop )
 
   conn.commit()
+
+create_tables()
