@@ -87,7 +87,16 @@ def answer_query():
 
   sql_cities_in_state = """SELECT * FROM citypop WHERE state = %s;"""
   cur.execute(sql_cities_in_state, [stateName])
-  print(cur.fetchall())
+  city_list = cur.fetchall()
+  totalPopulation = 0
+  for city in city_list:
+    print(city[2)
+    totalPopulation = totalPopulation + int(city[2])
+
+  print('Total Population In The State ' + stateName + ':')
+  print(totalPopulation)
+    
+  
   
 
 
