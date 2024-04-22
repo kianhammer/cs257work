@@ -35,21 +35,21 @@ def answer_query():
   if northfield == None:
     print('Northfield does not exist in the database')
   else:
-    print(northfield)
+    print(northfield[0])
   
   #city with largest population
   sql_city_largest_pop = """SELECT * FROM citypop ORDER BY population DESC LIMIT 1;"""
 
   print('City with largest population:')
   cur.execute(sql_city_largest_pop)
-  print(cur.fetchone())
+  print(cur.fetchone()[0])
 
   #smallest city in Minnesota
   sql_city_smallest_minnesota = """SELECT * FROM citypop WHERE state = 'Minnesota' ORDER BY population LIMIT 1;"""
 
   print('Smallest city in Minnesota:')
   cur.execute(sql_city_smallest_minnesota)
-  print(cur.fetchone())
+  print(cur.fetchone()[0])
 
 
   #cities furthest North/South/East/West
@@ -60,19 +60,19 @@ def answer_query():
 
   print('Most northern city:')
   cur.execute(sql_city_furthest_north)
-  print(cur.fetchone())
+  print(cur.fetchone()[0])
   
   print('Most southern city:')
   cur.execute(sql_city_furthest_south)
-  print(cur.fetchone())
+  print(cur.fetchone()[0])
   
   print('Most western city:')
   cur.execute(sql_city_furthest_west)
-  print(cur.fetchone())
+  print(cur.fetchone()[0])
   
   print('Most eastern city:')
   cur.execute(sql_city_furthest_east)
-  print(cur.fetchone())
+  print(cur.fetchone()[0])
 
 
   #user input:
@@ -96,11 +96,6 @@ def answer_query():
   print(totalPopulation)
     
   
-  
-
-
-  
-  conn.commit()
 
 test_connection()
 answer_query()
