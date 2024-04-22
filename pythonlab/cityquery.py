@@ -28,12 +28,7 @@ def answer_query():
   cur = conn.cursor()
 
   #search for Northfield
-  sql_check_Northfield = """SELECT CASE WHEN EXISTS (
-      SELECT * FROM citypop WHERE city = 'Northfield'
-    )
-    THEN CAST(1 AS BIT)
-    ELSE CAST(0 AS BIT) END;"""
-  sql_Northfield = """SELECT * FROM citypop WHERE city = 'Northfield';"""
+  sql_Northfield = """SELECT * FROM citypop WHERE city = 'Seattle';"""
 
   cur.execute(sql_Northfield)
   northfield = cur.fetchone()
