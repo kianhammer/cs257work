@@ -33,9 +33,9 @@ def answer_query():
   cur.execute(sql_Northfield)
   northfield = cur.fetchone()
   if northfield == None:
-    return 'Northfield does not exist in the database'
+    print('Northfield does not exist in the database')
   else:
-    return northfield
+    print(northfield)
   
   #city with largest population
   sql_city_largest_pop = """SELECT * FROM citypop ORDER BY population DESC LIMIT 1;"""
