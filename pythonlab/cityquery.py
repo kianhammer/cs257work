@@ -77,7 +77,13 @@ def answer_query():
 
   #user input:
   stateName = input("Enter state:")
-  print(stateName)
+  
+  sql_state_list = """SELECT * FROM statepop;"""
+  cur.execute(sql_state_list)
+  state_list = cur.fetchall()
+
+  for state in state_list:
+    print(state[1])
     
   
 
@@ -86,4 +92,4 @@ def answer_query():
   conn.commit()
 
 test_connection()
-print(answer_query())
+answer_query()
