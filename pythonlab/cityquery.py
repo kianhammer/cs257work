@@ -78,13 +78,12 @@ def answer_query():
   #user input:
   stateName = input("Enter state:")
   
-  sql_state_list = """SELECT * FROM statepop;"""
-  cur.execute(sql_state_list)
-  state_list = cur.fetchall()
+  sql_state_list = """SELECT * FROM statepop WHERE code = %s;"""
+  cur.execute(sql_state_list, [stateName])
+  state_abbreviation = cur.fetchone()
 
-  for state in state_list:
-    if str(state[0]) == 'MN':
-      print(state[1])
+  if state_abbreviation != None:
+    print(state_abbreviation[1])
     
   
 
