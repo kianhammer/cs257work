@@ -83,7 +83,8 @@ def answer_query():
   state_list = cur.fetchall()
 
   for state in state_list:
-    if state[0] == stateName:
+    print(state[0])
+    if stateName == state[0]:
       print(state[1])
     
   
