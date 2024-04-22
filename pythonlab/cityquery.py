@@ -28,7 +28,7 @@ def answer_query():
   cur = conn.cursor()
 
   #search for Northfield
-  sql_Northfield = """SELECT * FROM citypop WHERE city = 'Seattle';"""
+  sql_Northfield = """SELECT * FROM citypop WHERE city = 'Northfield';"""
 
   cur.execute(sql_Northfield)
   northfield = cur.fetchone()
@@ -42,13 +42,14 @@ def answer_query():
 
   print('City with largest population:')
   cur.execute(sql_city_largest_pop)
-  
+  print(cur.fetchone())
 
   #smallest city in Minnesota
   sql_city_smallest_minnesota = """SELECT * FROM citypop WHERE state = 'Minnesota' ORDER BY population LIMIT 1;"""
 
   print('Smallest city in Minnesota:')
   cur.execute(sql_city_smallest_minnesota)
+  print(cur.fetchone())
 
 
   #cities furthest North/South/East/West
@@ -59,12 +60,19 @@ def answer_query():
 
   print('Most northern city:')
   cur.execute(sql_city_furthest_north)
+  print(cur.fetchone())
+  
   print('Most southern city:')
   cur.execute(sql_city_furthest_south)
+  print(cur.fetchone())
+  
   print('Most western city:')
   cur.execute(sql_city_furthest_west)
+  print(cur.fetchone())
+  
   print('Most eastern city:')
   cur.execute(sql_city_furthest_east)
+  print(cur.fetchone())
 
 
   #user input:
