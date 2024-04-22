@@ -81,4 +81,5 @@ def answer_query():
   
   conn.commit()
 
+test_connection()
 answer_query()
