@@ -84,9 +84,8 @@ def answer_query():
 
   for state in state_list:
     print(state[0])
-    if str(stateName) == str(state[0]):
+    if str(state[0]) == 'MN':
       print(state[1])
-    print(str(stateName))
     
   
 
