@@ -83,8 +83,11 @@ def answer_query():
   state_abbreviation = cur.fetchone()
 
   if state_abbreviation != None:
-    print(state_abbreviation[1])
-    
+    stateName = state_abbreviation[1]
+
+  sql_cities_in_state = """SELECT * FROM citypop WHERE state = %s;"""
+  cur.execute(sql_cities_in_state, [stateName])
+  print(cur.fetchall())
   
 
 
