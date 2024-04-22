@@ -90,7 +90,6 @@ def answer_query():
   city_list = cur.fetchall()
   totalPopulation = 0
   for city in city_list:
-    print(city[2])
     totalPopulation = totalPopulation + int(city[2])
 
   print('Total Population In The State ' + stateName + ':')
