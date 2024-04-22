@@ -86,6 +86,7 @@ def answer_query():
     print(state[0])
     if str(stateName) == str(state[0]):
       print(state[1])
+    print(str(stateName))
     
   
 
