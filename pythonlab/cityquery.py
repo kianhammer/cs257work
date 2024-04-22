@@ -29,19 +29,18 @@ def answer_query():
 
   #search for Northfield
   sql_check_Northfield = """SELECT CASE WHEN EXISTS (
-      SELECT * FROM citypop WHERE city = 'Seattle'
+      SELECT * FROM citypop WHERE city = 'Northfield'
     )
     THEN CAST(1 AS BIT)
     ELSE CAST(0 AS BIT) END;"""
-  sql_Northfield = """SELECT * FROM citypop WHERE city = 'Seattle';"""
+  sql_Northfield = """SELECT * FROM citypop WHERE city = 'Northfield';"""
 
   cur.execute(sql_Northfield)
-  return cur.fetchone()
-  if cur.execute(sql_check_Northfield) == 1:
-    return cur.execute(sql_Northfield)
-  else:
+  northfield = cur.fetchone()
+  if northfield == None:
     return 'Northfield does not exist in the database'
-
+  else:
+    return northfield
   
   #city with largest population
   sql_city_largest_pop = """SELECT * FROM citypop ORDER BY population DESC LIMIT 1;"""
