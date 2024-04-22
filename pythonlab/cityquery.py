@@ -35,7 +35,7 @@ def answer_query():
     ELSE CAST(0 AS BIT) END;"""
   sql_Northfield = """SELECT * FROM citypop WHERE city = 'Seattle';"""
 
-  if cur.execute(sql_check_Northfield) == 1
+  if cur.execute(sql_check_Northfield) == 1:
     return cur.execute(sql_Northfield)
   else:
     return 'Northfield does not exist in the database'
