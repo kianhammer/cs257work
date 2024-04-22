@@ -29,11 +29,11 @@ def answer_query():
 
   #search for Northfield
   sql_check_Northfield = """SELECT CASE WHEN EXISTS (
-      SELECT * FROM citypop WHERE city = 'Northfield'
+      SELECT * FROM citypop WHERE city = 'Seattle'
     )
     THEN CAST(1 AS BIT)
     ELSE CAST(0 AS BIT) END;"""
-  sql_Northfield = """SELECT * FROM citypop WHERE city = 'Northfield';"""
+  sql_Northfield = """SELECT * FROM citypop WHERE city = 'Seattle';"""
 
   if cur.execute(sql_check_Northfield) == 1:
     cur.execute(sql_Northfield)
