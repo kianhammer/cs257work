@@ -35,10 +35,10 @@ def answer_query():
     ELSE CAST(0 AS BIT) END;"""
   sql_Northfield = """SELECT * FROM citypop WHERE city = 'Seattle';"""
 
-  if cur.execute(sql_check_Northfield) == 1:
-    print(cur.execute(sql_Northfield))
+  if cur.execute(sql_check_Northfield) == 1
+    return cur.execute(sql_Northfield)
   else:
-    print('Northfield does not exist in the database')
+    return 'Northfield does not exist in the database'
 
   
   #city with largest population
@@ -82,4 +82,4 @@ def answer_query():
   conn.commit()
 
 test_connection()
-answer_query()
+print(answer_query())
