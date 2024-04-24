@@ -21,6 +21,24 @@ def my_add(num1, num2):
     number = int(num1) + int(num2)
     return '' + str(number)
 
+@app.route('/pop/<abbrev>')
+def my_pop(abbrev):
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="hammerk",
+        user="hammerk",
+        password="spring997green")
+    
+    cur = conn.cursor()
+
+    sql_state_list = """SELECT * FROM statepop WHERE code = %s;"""
+    cur.execute(sql_state_list, [abbrev])
+    state = cur.fetchone()
+
+    return str(state[2])
+    
+
 if __name__ == '__main__':
     my_port = 5114
     app.run(host='0.0.0.0', port = my_port) 
