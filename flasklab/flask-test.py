@@ -1,4 +1,5 @@
 import flask
+import psycopg2
 
 app = flask.Flask(__name__)
 
@@ -32,8 +33,8 @@ def my_pop(abbrev):
     
     cur = conn.cursor()
 
-    sql_state_list = """SELECT * FROM statepop WHERE code = %s;"""
-    cur.execute(sql_state_list, [abbrev])
+    sql_state = """SELECT * FROM statepop WHERE code = %s;"""
+    cur.execute(sql_state, [abbrev])
     state = cur.fetchone()
 
     return str(state[2])
