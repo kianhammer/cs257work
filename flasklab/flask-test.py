@@ -1,5 +1,7 @@
 import flask
 import psycopg2
+from flask import render_template
+import random
 
 app = flask.Flask(__name__)
 
@@ -38,7 +40,20 @@ def my_pop(abbrev):
     state = cur.fetchone()
 
     return str(state[2])
+
+@app.route('/random-person')
+def my_person():
+    conn = psycopg2.connect(
+        host="localhost",
+        port=5432,
+        database="hammerk",
+        user="hammerk",
+        password="spring997green")
     
+    cur = conn.cursor()
+
+    nameList = ["Bob", "Alice", "Carl", "Samantha", "Dave", "John", "Sarah", "Becca", "Cameron", "Chloe", "Eric", "Alex", "Tony", "Stephanie", "Tiffany", "Britney", "Max"]
+    adjectiveList = ["Wise", "Great", "Pure", "Brave", "Mighty", "Rich", "Bold", "Lucky"]
 
 if __name__ == '__main__':
     my_port = 5114
