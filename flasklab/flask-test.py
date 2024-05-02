@@ -61,7 +61,7 @@ def my_randomPerson():
     adjective = adjectiveList[random.randint(0,9)]
     name = nameList[random.randint(0,19)]
     
-    person = name + " the " + adjective + " was born in " + city + " in " + random.randint(1700, 2024)
+    person = name + " the " + adjective + " was born in " + city + " in " + str(random.randint(1700, 2024))
 
     return render_template("person.html", randomPerson = person)
 
