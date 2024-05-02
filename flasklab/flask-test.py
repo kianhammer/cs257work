@@ -42,7 +42,7 @@ def my_pop(abbrev):
     return str(state[2])
 
 @app.route('/random-person')
-def my_person():
+def my_randomPerson():
     conn = psycopg2.connect(
         host="localhost",
         port=5432,
@@ -52,8 +52,21 @@ def my_person():
     
     cur = conn.cursor()
 
-    nameList = ["Bob", "Alice", "Carl", "Samantha", "Dave", "John", "Sarah", "Becca", "Cameron", "Chloe", "Eric", "Alex", "Tony", "Stephanie", "Tiffany", "Britney", "Max"]
-    adjectiveList = ["Wise", "Great", "Pure", "Brave", "Mighty", "Rich", "Bold", "Lucky"]
+    sql_city = """SELECT * FROM (SELECT * FROM citypop ORDER BY population) WHERE rownum = %s;"""
+
+    nameList = ["Bob", "Alice", "Carl", "Samantha", "Dave", "John", "Sarah", "Becca", "Cameron", "Chloe", "Eric", "Alex", "Tony", "Stephanie", "Tiffany", "Britney", "Max", "Tom", "Jerry", "Isabella"]
+    adjectiveList = ["Wise", "Great", "Pure", "Brave", "Mighty", "Rich", "Bold", "Lucky", "Curious", "Kind"]
+    city = cur.execute(sql_city, [random.randomInt(0,1000)])
+    adjective = adjectiveList[random.randomInt(0,9)]
+    name = nameList[random.randomInt(0,19)]
+    
+    person = name + " the " + adjective + " was born in " + city + " in " + random.randomInt(1700, 2024)
+
+    return render_template("person.html", randomPerson = person)
+
+@app.route('/person')
+def my_randomPerson():
+    return render_template("title.html")
 
 if __name__ == '__main__':
     my_port = 5114
