@@ -52,11 +52,11 @@ def my_randomPerson():
     
     cur = conn.cursor()
 
-    sql_city = """SELECT * FROM (SELECT * FROM citypop ORDER BY population) WHERE rownum = %s;"""
+    sql_city = """SELECT * FROM citypop ORDER BY RAND() LIMIT 1;"""
 
     nameList = ["Bob", "Alice", "Carl", "Samantha", "Dave", "John", "Sarah", "Becca", "Cameron", "Chloe", "Eric", "Alex", "Tony", "Stephanie", "Tiffany", "Britney", "Max", "Tom", "Jerry", "Isabella"]
     adjectiveList = ["Wise", "Great", "Pure", "Brave", "Mighty", "Rich", "Bold", "Lucky", "Curious", "Kind"]
-    city = cur.execute(sql_city, [random.randint(0,1000)])
+    city = cur.execute(sql_city)
     adjective = adjectiveList[random.randint(0,9)]
     name = nameList[random.randint(0,19)]
     
