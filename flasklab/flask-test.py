@@ -56,7 +56,8 @@ def my_randomPerson():
 
     nameList = ["Bob", "Alice", "Carl", "Samantha", "Dave", "John", "Sarah", "Becca", "Cameron", "Chloe", "Eric", "Alex", "Tony", "Stephanie", "Tiffany", "Britney", "Max", "Tom", "Jerry", "Isabella"]
     adjectiveList = ["Wise", "Great", "Pure", "Brave", "Mighty", "Rich", "Bold", "Lucky", "Curious", "Kind"]
-    city = cur.execute(sql_city)
+    cur.execute(sql_city)
+    city = cur.fetchone()[0]
     adjective = adjectiveList[random.randint(0,9)]
     name = nameList[random.randint(0,19)]
     
