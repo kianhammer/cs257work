@@ -56,11 +56,11 @@ def my_randomPerson():
 
     nameList = ["Bob", "Alice", "Carl", "Samantha", "Dave", "John", "Sarah", "Becca", "Cameron", "Chloe", "Eric", "Alex", "Tony", "Stephanie", "Tiffany", "Britney", "Max", "Tom", "Jerry", "Isabella"]
     adjectiveList = ["Wise", "Great", "Pure", "Brave", "Mighty", "Rich", "Bold", "Lucky", "Curious", "Kind"]
-    city = cur.execute(sql_city, [random.randInt(0,1000)])
-    adjective = adjectiveList[random.randInt(0,9)]
-    name = nameList[random.randInt(0,19)]
+    city = cur.execute(sql_city, [random.randint(0,1000)])
+    adjective = adjectiveList[random.randint(0,9)]
+    name = nameList[random.randint(0,19)]
     
-    person = name + " the " + adjective + " was born in " + city + " in " + random.randInt(1700, 2024)
+    person = name + " the " + adjective + " was born in " + city + " in " + random.randint(1700, 2024)
 
     return render_template("person.html", randomPerson = person)
 
