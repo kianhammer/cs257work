@@ -65,7 +65,7 @@ def my_randomPerson():
     return render_template("person.html", randomPerson = person)
 
 @app.route('/person')
-def my_randomPerson():
+def my_person():
     return render_template("title.html")
 
 if __name__ == '__main__':
