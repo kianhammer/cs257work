@@ -9,7 +9,7 @@ app = flask.Flask(__name__)
 def welcome():
 
 
-  return render_template("homepage.html")
+  return render_template("character.html")
 
 
 
