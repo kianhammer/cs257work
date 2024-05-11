@@ -1,1 +1,17 @@
+.title-class{
+  text-align: center;
+  color: green;
+}
 
+.change-name-class{
+  color: red;
+}
+
+.change-stats-class{
+  text-align: center;
+  color: blue;
+}
+
+.button{
+  color: black;
+}
