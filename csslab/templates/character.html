@@ -5,20 +5,28 @@
 </head>
 
 <h1 class="title-class" id="title">
-Create A Character!
+Make A Character!
 </h1>
 
-<p class="change-name-class" id="changeNamePortion">
-New Name: <input id="character-name"> <br> <br>
+<p class="change-name-class">
+New Name: <input id="characterNameEntry"> <br> <br>
 
-<button onclick="changeName()" id="changeName">
+<button class="name-button-class" onclick="changeName()" id="changeName">
   Change Name
-</button> <br> <br>
+</button> <br>
 
 </p>
 
 <p class="change-stats-class" id="changeStatsPortion">
-<button onclick="changeStats()" id="changeStats">
+<button class="description-button-class" onclick="changeStats()" id="changeStats">
    Change Character Stats
-</button>
+</button> <br> <br>
+</p>
+
+<p class="character-name" id="characterName">
+  No Character Name <br> 
+</p>
+
+<p class="character-description" id="characterDescription">
+  No Character Description
 </p>
