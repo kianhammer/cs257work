@@ -6,6 +6,7 @@ the_description = document.getElementById("characterDescription");
 
 function changeName() {
 	name_entry = document.getElementById("characterNameEntry");
+	Console.log("changing Name?");
 	var name = name_entry.value;
 	var text = "Name: " + name + "<br> ";
 	the_name.innerHTML = "" + text;
@@ -13,6 +14,7 @@ function changeName() {
 
 function changeStats() {
 	the_heading.innerHTML = "Make Another Character?";
+	Console.log("changing Stats?");
 	
 	var raceArray = ["Human", "Goblin", "Dwarf", "Elf", "Gnome", "Hafling"];
 	var race = raceArray[Math.floor(Math.random() * 6)];
