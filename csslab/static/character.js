@@ -7,8 +7,8 @@ the_description = document.getElementById("characterDescription");
 function changeName() {
 	name_entry = document.getElementById("characterNameEntry");
 	var name = name_entry.value;
-	var text = "Name: " + name + "<br> ";
-	the_name.innerHTML = "" + text;
+	var nameText = "Name: " + name + "<br> ";
+	the_name.innerHTML = "" + nameText;
 }
 
 function changeStats() {
