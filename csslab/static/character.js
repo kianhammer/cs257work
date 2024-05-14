@@ -33,7 +33,7 @@ function changeStats() {
 	var charisma = randomStatNumber(12);
 	text = text + "Charisma Level: " + charisma + "<br>";
   
-  the_description.innerHTML = text;
+  the_description.innerHTML = "" + text;
 }
 
 function randomStatNumber(max) {
