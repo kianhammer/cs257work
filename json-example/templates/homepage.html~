@@ -1,0 +1,23 @@
+<head>
+  <link rel="stylesheet" href="/static/example.css">
+
+  <script src="/static/example.js"></script>
+</head>
+
+<h1 class="my-class" id="hello">
+  Hello Friend!
+</h1>
+
+<p class="center-para">
+  The Name is <b id="bold_name"> Unknown </b>
+</p>
+
+<p class="center-para">
+  The Value is <b id="bold_answer"> Unknown </b>
+</p>
+
+<p class="center-para">
+<button class="big-button" onclick="fetchAnswer()">
+   Change Color
+</button>
+</p>

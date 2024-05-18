@@ -1,0 +1,32 @@
+function updateAnswer(the_json) {
+    
+    name = the_json['name'];
+
+    answer = the_json['value'];
+
+    the_name = document.getElementById("bold_name");
+    the_name.innerHTML = name;
+    
+    the_answer = document.getElementById("bold_answer");
+    the_answer.innerHTML = answer; 
+
+}
+
+function fetchAnswer() {
+    // Gets the name that the user input into the HTML input box
+    the_name = document.getElementById("name_input").value;
+
+    // Creates a URL that matches the app.route in my Python
+    URL = "/lookup/" + the_name;
+
+    // variable name => thing to do with variable
+    // The variable before the => gets the value from the previous function's output
+    fetch(URL).then( response => response.json()).then( the_json => updateAnswer(the_json) );
+
+
+    
+    console.log(URL);
+   
+}
+
+

@@ -1,0 +1,29 @@
+function updateAnswer(data) {
+    the_json = data;
+
+    name = the_json['name'];
+
+    answer = the_json['value'];
+
+    the_name = document.getElementById("bold_name");
+    the_name.innerHTML = name;
+    
+    the_answer = document.getElementById("bold_answer");
+    the_answer.innerHTML = answer; 
+
+}
+
+function fetchAnswer() {
+    name = "Alice";
+
+    URL = "/lookup/" + name;
+
+    fetch(URL).then( response => response.json()).then( data => updateAnswer(data) );
+
+
+    
+    console.log(URL);
+   
+}
+
+
